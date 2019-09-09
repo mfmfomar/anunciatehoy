@@ -1,0 +1,21 @@
+include parcial/head
+link(rel="stylesheet" type="text/css" href="../publico/app-assets/css/pages/data-list-view.css")
+link(rel="stylesheet" type="text/css" href="../publico/app-assets/vendors/css/forms/select/select2.min.css")
+link(rel="stylesheet" type="text/css" href="../publico/assets/css/mapa.min.css")
+link(rel="stylesheet" type="text/css" href="../publico/app-assets/css/plugins/galeria/owl.carousel.css")
+link(rel="stylesheet" type="text/css" href="../publico/app-assets/css/plugins/galeria/owl.transitions.css")
+link(rel="stylesheet" type="text/css" href="../publico/assets/css/zStyle.css")
+// BEGIN: Body
+body.vertical-layout.vertical-menu-modern.2-columns.navbar-floating.footer-static(data-open="click" data-menu="vertical-menu-modern" data-col="2-columns")
+	
+    include parcial/mainMenu
+    include parcial/contentUbicaciones
+    .sidenav-overlay
+    .drag-target
+    include parcial/footer
+    include parcial/js
+    include parcial/googleMaps
+    script(src='socket.io/socket.io.js')
+    script(src='publico/assets/js/mainMapa.min.js')
+    script(src='publico/app-assets/js/scripts/galeria/owl.carousel.min.js')
+    script(src='publico/assets/js/ubicaciones.min.js')

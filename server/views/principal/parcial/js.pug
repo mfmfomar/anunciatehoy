@@ -1,0 +1,69 @@
+// BEGIN: Vendor JS
+script(src='/publico/app-assets/vendors/js/vendors.min.js')
+// BEGIN Vendor JS
+// BEGIN: Page Vendor JS
+// END: Page Vendor JS
+// BEGIN: Theme JS
+script(src='/publico/app-assets/js/core/app-menu.js')
+script(src='/publico/app-assets/js/core/app.js')
+script(src='/publico/app-assets/js/scripts/components.js')
+// END: Theme JS
+// BEGIN: Vue JS
+script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.1/vue-resource.min.js")
+// END: Vue JS
+script.
+	Vue.config.devtools = true
+	window.lugar = {};
+	window.app = {};
+	lugar.server='http://'+location.host+'/';
+	app.CascaronDetalles="";
+	//menu lateral
+	var bandera = "#{seccion}";
+	$('#'+bandera).addClass('active')
+	new Vue({
+		el: '#sideMenu',
+		created: function() {this.showhide()},
+		data: {login: false},
+		methods: {
+			showhide:function(){
+				if(localStorage.getItem('token') != null && localStorage.getItem('token') != ""){
+					this.$http.post('/api/validarSesion',this.ubicacion,  {headers: {"Authorization": localStorage.getItem('token')}})
+					.then(response => {
+						this.login = response.body
+					},response => {
+					    //error
+					    if(response.status == 500) {
+					    	cerrarSession()
+					    }
+					  })
+				}
+			}
+		}
+	});
+	function sessionUser(){
+		var user = localStorage.getItem('user');
+		if(user){
+			$('.notLogin').css('display', 'none');
+			$('.Login').css('display', 'contents');
+			user = JSON.parse(user);
+			//$('#usuarioNombre').html(user.nombre+' '+user.apellido);
+			$('#usuarioNombre').html(user.nombre);
+		}else{
+			$('.notLogin').css('display', 'contents');
+			$('.Login').css('display', 'none');
+		}
+	}
+	//cerrarSession
+	function cerrarSession(){
+		localStorage.removeItem('token');
+		localStorage.removeItem('user');
+		window.location.href='login';
+	}
+	function alerta(mensaje){	
+		$( "#alertaModal" ).click(function() {
+			$('#alertaContenido').html(mensaje);
+		});
+		$( "#alertaModal" ).click();
+		$( "#alertaModal" ).modal('toggle');
+	}

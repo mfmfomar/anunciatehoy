@@ -1,0 +1,44 @@
+// BEGIN: Content
+.app-content.content
+  include header
+  .content-wrapper
+    .content-header.row
+    .content-body
+      include modalAlert
+      section.row.flexbox-container
+        .col-xl-8.col-11.d-flex.justify-content-center
+          .card.bg-authentication.rounded-0.mb-0
+            .row.m-0
+                .card.rounded-0.mb-0.px-2
+                  .card-header.pb-1
+                    .card-title
+                      h4.mb-0(data-i18n='Login') Iniciar sesión
+                  p.px-2(data-i18n='Loginmsj') Bienvenido de nuevo, por favor inicie sesión en su cuenta.
+                  .card-content
+                    .card-body.pt-1
+                      form#formLogin(action='')
+                        fieldset.form-label-group.form-group.position-relative.has-icon-left
+                          input#user-name.form-control(type='text' placeholder='Correo' required='' v-model="user.email")
+                          .form-control-position
+                            i.feather.icon-user
+                          label(for='user-name' data-i18n='Correo') Correo
+                        fieldset.form-label-group.position-relative.has-icon-left
+                          input#user-password.form-control(type='password' placeholder='Password' required='' v-model="user.password")
+                          .form-control-position
+                            i.feather.icon-lock
+                          label(for='user-password' data-i18n='Contraseña') Contraseña  
+                        a.btn.btn-outline-primary.float-left.btn-inline(href='/signIn' data-i18n='Crear cuenta') Register
+                        button.btn.btn-primary.float-right.btn-inline(type='submit' data-i18n='Login') Iniciar sesión
+                  .login-footer
+                    .divider
+                      .divider-text -
+                    //.footer-btn.d-inline
+                      a.btn.btn-facebook(href='#')
+                        span.fa.fa-facebook
+                      a.btn.btn-twitter.white(href='#')
+                        span.fa.fa-twitter
+                      a.btn.btn-google(href='#')
+                        span.fa.fa-google
+                      a.btn.btn-github(href='#')
+                        span.fa.fa-github-alt
+// END: Content

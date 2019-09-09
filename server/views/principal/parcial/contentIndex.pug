@@ -1,0 +1,108 @@
+// BEGIN: Content
+.app-content.content
+  include header
+  .content-wrapper
+    .content-header.row
+      .content-header-left.col-md-9.col-12.mb-2
+        .row.breadcrumbs-top
+          .col-12
+            h2.content-header-title.float-left.mb-0 Advance Card
+            .breadcrumb-wrapper.col-12
+              ol.breadcrumb
+                li.breadcrumb-item
+                  a(href='index.html') Home
+                li.breadcrumb-item
+                  a(href='#') Card
+                li.breadcrumb-item.active
+                  | Advance Card
+      .content-header-right.text-md-right.col-md-3.col-12.d-md-block.d-none
+        .form-group.breadcrum-right
+          .dropdown
+            button.btn-icon.btn.btn-primary.btn-round.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              i.feather.icon-settings
+            .dropdown-menu.dropdown-menu-right
+              a.dropdown-item(href='#') Chat
+              a.dropdown-item(href='#') Email
+              a.dropdown-item(href='#') Calendar
+    .content-body
+      // Basic example and Profile cards section start
+      section#basic-examples
+        .row.match-height
+          .col-xl-3.col-md-4.col-sm-12.carta-box(v-for='(item) in anuncios'  :index="item._id" v-cloak v-if="item.estado=='disponible'")
+            //if es anuncio 
+            include ../cards/anuncio
+            //if es propiedad
+            //if carro
+          //- .col-xl-4.col-md-6.col-sm-12
+          //-   .card
+          //-     .card-content
+          //-       .card-body
+          //-         img.card-img.img-fluid.mb-1(src='../../../publico/app-assets/images/pages/content-img-2.jpg' alt='Card image cap')
+          //-         h5.mt-1 Vuesax Admin
+          //-         p.card-text By Pixinvent Creative Studio
+          //-         hr.my-1
+          //-         .d-flex.justify-content-between.mt-2
+          //-           .float-left
+          //-             p.font-medium-2.mb-0 $ 4785.78
+          //-             p Income
+          //-           .float-right
+          //-             p.font-medium-2.mb-0 12 June 2019
+          //-             p Delivery Date
+          //- .col-xl-4.col-md-6.col-sm-12
+          //-   .card
+          //-     .card-content
+          //-       .card-body
+          //-         img.card-img.img-fluid.mb-1(src='../../../publico/app-assets/images/pages/content-img-3.jpg' alt='Card image cap')
+          //-         h5.my-1 Vuesax Admin
+          //-         .d-flex.justify-content-between
+          //-           small#example-caption-1.float-left.font-weight-bold.mb-25 $ 5975
+          //-           small#example-caption-2.float-right.mb-25 $ 8000
+          //-         .progress.progress-bar-primary.box-shadow-6
+          //-           .progress-bar(role='progressbar' aria-valuenow='75' aria-valuemin='75' aria-valuemax='100' style='width:75%' aria-describedby='example-caption-2')
+          //-         .card-btns.d-flex.justify-content-between
+          //-           a.btn.gradient-light-primary.white(href='#') Download
+          //-           a.btn.btn-outline-primary.float-right(href='#') View All
+          //- .col-xl-4.col-md-6.col-sm-12
+          //-   .card
+          //-     .card-content
+          //-       img.card-img-top.img-fluid(src='../../../publico/app-assets/images/pages/content-img-1.jpg' alt='Card image cap')
+          //-       .card-body
+          //-         h5 Vuesax Admin
+          //-         p.card-text.mb-0 By Pixinvent Creative Studio
+          //-         span.card-text Elite Author
+          //-         .card-btns.d-flex.justify-content-between.mt-2
+          //-           a.btn.gradient-light-primary.text-white(href='#') Download
+          //-           a.btn.btn-outline-primary(href='#') View All
+          //- .col-xl-4.col-md-6.col-sm-12
+          //-   .card
+          //-     .card-content
+          //-       .card-body
+          //-         img.card-img.img-fluid.mb-1(src='../../../publico/app-assets/images/pages/content-img-2.jpg' alt='Card image cap')
+          //-         h5.mt-1 Vuesax Admin
+          //-         p.card-text By Pixinvent Creative Studio
+          //-         hr.my-1
+          //-         .d-flex.justify-content-between.mt-2
+          //-           .float-left
+          //-             p.font-medium-2.mb-0 $ 4785.78
+          //-             p Income
+          //-           .float-right
+          //-             p.font-medium-2.mb-0 12 June 2019
+          //-             p Delivery Date
+          //- .col-xl-4.col-md-6.col-sm-12
+            .card
+              .card-content
+                .card-body
+                  img.card-img.img-fluid.mb-1(src='../../../publico/app-assets/images/pages/content-img-3.jpg' alt='Card image cap')
+                  h5.my-1 Vuesax Admin
+                  .d-flex.justify-content-between
+                    small#example-caption-1.float-left.font-weight-bold.mb-25 $ 5975
+                    small#example-caption-2.float-right.mb-25 $ 8000
+                  .progress.progress-bar-primary.box-shadow-6
+                    .progress-bar(role='progressbar' aria-valuenow='75' aria-valuemin='75' aria-valuemax='100' style='width:75%' aria-describedby='example-caption-2')
+                  .card-btns.d-flex.justify-content-between
+                    a.btn.gradient-light-primary.white(href='#') Download
+                    a.btn.btn-outline-primary.float-right(href='#') View All
+      // // Basic example and Profile cards section end
+
+      // Timeline Ends
+// END: Content

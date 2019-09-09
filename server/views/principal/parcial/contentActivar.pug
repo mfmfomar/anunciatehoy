@@ -1,0 +1,20 @@
+.app-content.content
+  .content-wrapper
+    .content-header.row
+    .content-body
+      section#alerts-with-icons
+        .row
+          .col-md-12
+            .card
+              .card-header
+                h4.card-title(data-i18n='Activacion') Activación de Cuenta
+              .card-content
+                .card-body
+                  p
+                  .alert.alert-success(role='alert')
+                    i.feather.icon-check.mr-1.align-middle
+                    span(data-i18n='ActivacionMsj') Su Cuenta Esta Activada
+                    script.
+                      setTimeout(function () {
+                       window.location.href = window.location.origin+'/login';
+                      }, 2000); //will call the function after 2 secs.

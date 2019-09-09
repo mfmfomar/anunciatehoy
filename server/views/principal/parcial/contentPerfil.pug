@@ -1,0 +1,88 @@
+// BEGIN: Content
+.app-content.content
+  include header
+  .content-wrapper
+    .content-header.row
+      .content-header-left.col-md-9.col-12.mb-2
+        .row.breadcrumbs-top
+          .col-12
+            .breadcrumb-wrapper.col-12
+              ol.breadcrumb
+                |&nbsp;
+    .content-body
+      // card actions section start
+      section#card-actions
+        // Info table about action starts
+        .row
+          .col-md-8.col-sm-12
+            .card
+              .card-header
+                h4.card-title(data-i18n='Cuenta') Cuenta
+                a.heading-elements-toggle
+                  i.fa.fa-ellipsis-v.font-medium-3
+                .heading-elements
+                  ul.list-inline.mb-0
+                    li
+                      a(data-action='expand')
+                        i.feather.icon-maximize
+              .card-content.collapse.show
+                .card-body
+                  .row
+                    .col-sm-12
+                      form#formPerfil(action='')
+                        .table-responsive
+                        table.table.table-bordered
+                          tbody
+                            tr
+                              td(data-i18n='Apellido') Apellido
+                              td.text-center
+                                i.feather.icon-user
+                              td
+                                input(v-model="user.apellido")
+                            tr
+                              td(data-i18n='Nombre') Nombre
+                              td.text-center
+                                i.feather.icon-user
+                              td
+                                input(v-model="user.nombre")
+                            tr
+                              td(data-i18n='Correo') Correo
+                              td.text-center
+                                i.feather.icon-mail
+                              td
+                                input(v-model="user.email")
+                            tr
+                              td(data-i18n='Telefono') Telefono
+                              td.text-center
+                                i.feather.icon-phone
+                              td
+                                input(v-model="user.telefono")
+                            tr
+                              td(data-i18n='Cuenta') Cuenta
+                              td.text-center
+                                i#badge.feather.icon-award
+                              td {{ user.tipo }}
+                            tr
+                              td(data-i18n='Pais') Pais
+                              td.text-center
+                                i#pais.flag-icon
+                              td {{ user.pais }}
+                            tr
+                              td(data-i18n='Estado') Estado
+                              td.text-center
+                                i.feather
+                              td {{ user.estado }}
+                            tr
+                              td(data-i18n='Ciudad') Ciudad
+                              td.text-center
+                                i.feather
+                              td {{ user.ciudad }}
+
+                      button.border-success.float-right.btn.btn-flat-success.mr-1.mb-1.waves-effect.waves-light(type='button' onclick="appPerfil.update()")
+                        i.feather.icon-check
+                        |Actualizar Datos
+
+          include publicidad_baner_vertical
+
+      // // card-actions section end
+// END: Content

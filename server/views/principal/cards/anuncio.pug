@@ -1,0 +1,19 @@
+.card.carta.size
+  .card-content.cara.col-xl-12.col-md-12.col-sm-12
+    img.anuncio.card-img-top.img-fluid(v-bind:src="'/publico/assets/img/anuncios/'+item._id+'/'+item.imgPortada" alt='Card image cap')
+    .card-body
+      h5.card-title.palabraLarga(style="max-width: 380px;") {{ item.titulo }} 
+      hr.my-1
+      .d-flex.justify-content-between.mt-2
+        .float-left
+          p.font-medium-2.mb-0 ${{ item.precio }} 
+        .float-right
+          p.font-medium-2.mb-0 {{ item.fecha }}
+  .card-content.cara.detras.col-xl-12.col-md-12.col-sm-12
+    .card-body
+      h4.card-title.palabraLarga(style="max-width: 380px;") {{ item.titulo }} 
+      p.card-text.break-word {{ item.descripcion }}
+      ul.list-group.list-group-flush
+        li.list-group-item
+          span.badge.badge-pill.bg-info.float-right
+          a.card-link(v-bind:href="'/anuncio/'+item._id") Ver Anuncio completo...

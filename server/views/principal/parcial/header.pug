@@ -1,0 +1,165 @@
+// BEGIN: Header
+.content-overlay
+//.header-navbar-shadow
+nav.header-navbar.navbar-expand-lg.navbar.navbar-with-menu.floating-nav.navbar-light.navbar-shadow#header
+  .navbar-wrapper
+    .navbar-container.content
+      #navbar-mobile.navbar-collapse
+        .mr-auto.float-left.bookmark-wrapper.d-flex.align-items-center
+          ul.nav.navbar-nav
+            li.nav-item.mobile-menu.d-xl-none.mr-auto
+              a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+                i.ficon.feather.icon-menu
+          //ul.nav.navbar-nav.bookmark-icons
+            // li.nav-item.mobile-menu.d-xl-none.mr-auto
+            // a.nav-link.nav-menu-main.menu-toggle.hidden-xs(href='#')
+            // i.ficon.feather.icon-menu
+            li.nav-item.d-none.d-lg-block
+              a.nav-link(href='app-todo.html' data-toggle='tooltip' data-placement='top' title='Todo')
+                i.ficon.feather.icon-check-square
+            li.nav-item.d-none.d-lg-block
+              a.nav-link(href='app-chat.html' data-toggle='tooltip' data-placement='top' title='Chat')
+                i.ficon.feather.icon-message-square
+            li.nav-item.d-none.d-lg-block
+              a.nav-link(href='app-email.html' data-toggle='tooltip' data-placement='top' title='Email')
+                i.ficon.feather.icon-mail
+            li.nav-item.d-none.d-lg-block
+              a.nav-link(href='app-calender.html' data-toggle='tooltip' data-placement='top' title='Calendar')
+                i.ficon.feather.icon-calendar
+          //ul.nav.navbar-nav
+            li.nav-item.d-none.d-lg-block
+              a.nav-link.bookmark-star
+                i.ficon.feather.icon-star.warning
+              .bookmark-input.search-input
+                .bookmark-input-icon
+                  i.feather.icon-search.primary
+                input.form-control.input(type='text' placeholder='Explore Vuesax...' tabindex='0' data-search='template-list')
+                ul.search-list
+              // select.bookmark-select
+              // option Chat
+              // option email
+              // option todo
+              // option Calendar
+        ul.nav.navbar-nav.float-right
+          li.nav-item.d-none.d-lg-block
+            a.nav-link.nav-link-expand
+              i.ficon.feather.icon-maximize
+          //li.nav-item.nav-search
+            a.nav-link.nav-link-search
+              i.ficon.feather.icon-search
+            .search-input
+              .search-input-icon
+                i.feather.icon-search.primary
+              input.input(type='text' placeholder='Explore Vuesax...' tabindex='-1' data-search='template-list')
+              .search-input-close
+                i.feather.icon-x
+              ul.search-list
+          //li.dropdown.dropdown-notification.nav-item
+            a.nav-link.nav-link-label(href='#' data-toggle='dropdown')
+              i.ficon.feather.icon-bell
+              span.badge.badge-pill.badge-primary.badge-up 5
+            ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+              li.dropdown-menu-header
+                .dropdown-header.m-0.p-2
+                  h3.white 5 New
+                  span.notification-title App Notifications
+              li.scrollable-container.media-list
+                a.d-flex.justify-content-between(href='javascript:void(0)')
+                  .media.d-flex.align-items-start
+                    .media-left
+                      i.feather.icon-plus-square.font-medium-5.primary
+                    .media-body
+                      h6.primary.media-heading You have new order!
+                      small.notification-text  Are your going to meet me tonight?
+                    small
+                      time.media-meta(datetime='2015-06-11T18:29:20+08:00') 9 hours ago
+                a.d-flex.justify-content-between(href='javascript:void(0)')
+                  .media.d-flex.align-items-start
+                    .media-left
+                      i.feather.icon-download-cloud.font-medium-5.success
+                    .media-body
+                      h6.success.media-heading.red.darken-1 99% Server load
+                      small.notification-text You got new order of goods.
+                    small
+                      time.media-meta(datetime='2015-06-11T18:29:20+08:00') 5 hour ago
+                a.d-flex.justify-content-between(href='javascript:void(0)')
+                  .media.d-flex.align-items-start
+                    .media-left
+                      i.feather.icon-alert-triangle.font-medium-5.danger
+                    .media-body
+                      h6.danger.media-heading.yellow.darken-3 Warning notifixation
+                      small.notification-text Server have 99% CPU usage.
+                    small
+                      time.media-meta(datetime='2015-06-11T18:29:20+08:00') Today
+                a.d-flex.justify-content-between(href='javascript:void(0)')
+                  .media.d-flex.align-items-start
+                    .media-left
+                      i.feather.icon-check-circle.font-medium-5.info
+                    .media-body
+                      h6.info.media-heading Complete the task
+                      small.notification-text Cake sesame snaps cupcake
+                    small
+                      time.media-meta(datetime='2015-06-11T18:29:20+08:00') Last week
+                a.d-flex.justify-content-between(href='javascript:void(0)')
+                  .media.d-flex.align-items-start
+                    .media-left
+                      i.feather.icon-file.font-medium-5.warning
+                    .media-body
+                      h6.warning.media-heading Generate monthly report
+                      small.notification-text Chocolate cake oat cake tiramisu marzipan
+                    small
+                      time.media-meta(datetime='2015-06-11T18:29:20+08:00') Last month
+              li.dropdown-menu-footer
+                a.dropdown-item.p-1.text-center(href='javascript:void(0)') Read all notifications
+          li.dropdown.dropdown-notification.nav-item#dropdownubicacionesMapa(data-toggle='modal' data-target='#ubicacionesMapa' style="display:none ")
+            a.nav-link.nav-link-label(href='#')
+              i.ficon.feather.icon-list
+              //span.badge.badge-pill.badge-primary.badge-up 5
+          li.dropdown.dropdown-language.nav-item
+            a#dropdown-flag.dropdown-toggle.nav-link(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                i#banderaIcono.flag-icon
+                span.selected-language 
+            .dropdown-menu(aria-labelledby='dropdown-flag')
+              a.dropdown-item#languageDefault(href='#' data-language='es')
+                i.flag-icon.flag-icon-mx
+                |  Español
+              a.dropdown-item(href='#' data-language='en')
+                i.flag-icon.flag-icon-us
+                |  English
+              //
+                a.dropdown-item(href='#' data-language='fr')
+                  i.flag-icon.flag-icon-fr
+                  |  French
+                a.dropdown-item(href='#' data-language='de')
+                  i.flag-icon.flag-icon-de
+                  |  German
+                a.dropdown-item(href='#' data-language='pt')
+                  i.flag-icon.flag-icon-pt
+                  |  Portuguese
+          
+          //li.dropdown.dropdown-user.nav-item
+            a.dropdown-toggle.nav-link.dropdown-user-link(href='#' data-toggle='dropdown')
+              .user-nav.d-sm-flex.d-none
+                span.user-name.text-bold-600 John Doe
+                span.user-status Available
+              span
+                img.round(src='../../../publico/app-assets/images/portrait/small/avatar-s-11.png' alt='avatar' height='40' width='40')
+            .dropdown-menu.dropdown-menu-right
+              a.dropdown-item(href='page-user-profile.html')
+                i.feather.icon-user
+                |  Edit Profile
+              a.dropdown-item(href='app-email.html')
+                i.feather.icon-mail
+                |  My Inbox
+              a.dropdown-item(href='app-todo.html')
+                i.feather.icon-check-square
+                |  Task
+              a.dropdown-item(href='app-chat.html')
+                i.feather.icon-message-square
+                |  Chats
+              .dropdown-divider
+              a.dropdown-item(href='' onclick="cerrarSession()")
+                i.feather.icon-power
+                |  Logout
+include header-ubicacionesMapa
+// END: Header

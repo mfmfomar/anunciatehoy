@@ -1,0 +1,354 @@
+// BEGIN: Content
+.app-content.content
+  include header
+  .content-wrapper
+    .content-header.row
+      .content-header-left.col-md-9.col-12.mb-2
+        .row.breadcrumbs-top
+          .col-12
+            h2.content-header-title.float-left.mb-0(data-i18n='mis Anuncios') Mis Anuncios
+            .breadcrumb-wrapper.col-12
+              ol.breadcrumb
+                |&nbsp;
+    .content-body
+      .row 
+        // Data list view starts
+        section#data-list-view.data-list-view-header.col-md-10.col-sm-12
+          .action-btns.d-none
+            .btn-dropdown.mr-1.mb-1
+              .btn-group.dropdown.actions-dropodown
+                button#eliminar.btn.btn-outline-danger.px-1.py-1.waves-effect.waves-light(type='button' data-i18n='Eliminar' ) Eliminar
+                  |  
+          // DataTable starts
+          .table-responsive
+            // Modal
+            #myModal.modal.fade(role='dialog')
+              .modal-dialog
+                // Modal content
+                .modal-content
+                  .modal-header
+                    h4.modal-title(data-i18n='Eliminar') Eliminar
+                  .modal-body(data-i18n='EliminarText1') ¿Desea Eliminar los Registros seleccionados?
+                  .modal-footer
+                    button.btn.btn-outline-primary(type='button' data-dismiss='modal' data-i18n='Cancelar') Cancelar
+                    button.btn.btn-danger(type='button' data-dismiss='modal' v-on:click="deleteItem()" data-i18n='Eliminar') Eliminar
+            #myModal2.modal.fade(role='dialog')
+              .modal-dialog
+                // Modal content
+                .modal-content
+                  .modal-header
+                    h4.modal-title(data-i18n='Anuncio') Anuncio
+                    button.btn.btn-icon.btn-flat-primary.mr-1.mb-1.waves-effect(type='button' data-dismiss='modal')
+                      i.feather.icon-x
+                  .modal-body
+                    .col-xl-12.col-md-12.col-sm-12.carta-box
+                      .card.carta.col-xl-12.col-md-12.col-sm-12(style="padding: 0 !important;")
+                        .card-content.cara.col-xl-12.col-md-12.col-sm-12(style="padding: 0 !important;position :relative")
+                          img.card-img-top.img-fluid(v-bind:src="anuncio.imagen" alt='Card image cap')
+                          .card-body
+                            h5.card-title.palabraLarga(style="max-width: 380px;") {{ anuncio.titulo }} 
+                            p.card-text.mb-0 {{ user.nombre }} {{ user.apellido }}
+                            span.card-text
+                              a.card-link {{ user.nombreUsuario }} 
+                            hr.my-1
+                            .d-flex.justify-content-between.mt-2
+                              .float-left
+                                p.font-medium-2.mb-0 ${{ anuncio.precio }} 
+                              .float-right
+                                p.font-medium-2.mb-0 {{ anuncio.fecha }}
+                        .card-content.cara.detras.col-xl-12.col-md-12.col-sm-12
+                          .card-body
+                            h4.card-title.palabraLarga(style="max-width: 380px;") {{ anuncio.titulo }} 
+                            p.card-text.break-word {{ anuncio.descripcion }}
+                            ul.list-group.list-group-flush
+                              li.list-group-item
+                                span.badge.badge-pill.bg-info.float-right
+                                a.card-link(href='#') Ver Anuncio completo...
+            table.table.data-list-view(v-cloak)
+              thead
+                tr
+                  th Select
+                  th(data-i18n='Imagen') Imagen
+                  th(data-i18n='Título') Título
+                  th(data-i18n='Categoria') Categoria
+                  th(data-i18n='visitas') Visitas
+                  th(data-i18n='Estatus') Estatus
+              tbody
+                tr(v-for='(item,index) in anuncios'  :index="item._id" )
+                  td
+                  td(v-on:click="mostrar(index)").product-img.sorting_1
+                    img.miniatura(v-bind:src="'/publico/assets/img/anuncios/'+item._id+'/'+item.imgPortada" alt='Img placeholder')
+                  td(v-on:click="mostrar(index,this)" style="max-width: 100px;").product-name.palabraLarga {{ item.titulo }}
+                  td(v-on:click="mostrar(index,this)").product-category {{ item.categoria }}
+                  td(v-on:click="mostrar(index,this)") {{ item.views }}
+                  td(v-on:click="mostrar(index,this)")
+                    .chip.chip-primary(v-if='item.estado=="disponible"')
+                      .chip-body
+                        .chip-text  {{ item.estado }}
+                    .chip.chip-danger(v-else-if='item.estado=="expirado"')
+                      .chip-body
+                        .chip-text  {{ item.estado }}
+                    .chip.chip-warning(v-else-if='item.estado=="pendiente"')
+                      .chip-body
+                        .chip-text  {{ item.estado }}
+                    .chip.chip-danger(v-else-if='item.estado=="cancelado"')
+                      .chip-body
+                        .chip-text  {{ item.estado }}
+                //tr
+                  td
+                  td.product-name Beats HeadPhones
+                  td.product-category Computers
+                  td
+                    .progress.progress-bar-primary
+                      .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:83%')
+                  td
+                    .chip.chip-success
+                      .chip-body
+                        .chip-text Delivered
+                  td.product-price $69.99
+                  tr
+                    td
+                    td.product-name Altec Lansing - Bluetooth Speaker
+                    td.product-category Audio
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:57%')
+                    td
+                      .chip.chip-danger
+                        .chip-body
+                          .chip-text canceled
+                    td.product-price $199.99
+                  tr
+                    td
+                    td.product-name Aluratek - Bluetooth Audio Receiver
+                    td.product-category Computers
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:65%')
+                    td
+                      .chip.chip-warning
+                        .chip-body
+                          .chip-text on hold
+                    td.product-price $29.99
+                  tr
+                    td
+                    td.product-name Aluratek - Bluetooth Audio Transmitter
+                    td.product-category Audio
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:87%')
+                    td
+                      .chip.chip-danger
+                        .chip-body
+                          .chip-text canceled
+                    td.product-price $199.99
+                  tr
+                    td
+                    td.product-name Basis - Peak Fitness and Sleep Tracker
+                    td.product-category Fitness
+                    td
+                      .progress.progress-bar-primary
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:47%')
+                    td
+                      .chip.chip-warning
+                        .chip-body
+                          .chip-text on hold
+                    td.product-price $199.99
+                  tr
+                    td
+                    td.product-name Antec - Nano Diamond Thermal Compound
+                    td.product-category Fitness
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:55%')
+                    td
+                      .chip.chip-primary
+                        .chip-body
+                          .chip-text pending
+                    td.product-price $29.99
+                  tr
+                    td
+                    td.product-name Antec - SmartBean Bluetooth Adapter
+                    td.product-category Computer
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:63%')
+                    td
+                      .chip.chip-danger
+                        .chip-body
+                          .chip-text canceled
+                    td.product-price $39.99
+                  tr
+                    td
+                    td.product-name Beats by Dr. Dre - 3&apos; USB-to-Micro USB Cable
+                    td.product-category Computer
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:87%')
+                    td
+                      .chip.chip-success
+                        .chip-body
+                          .chip-text delivered
+                    td.product-price $199.99
+                  tr
+                    td
+                    td.product-name Beats by Dr. Dre - Bike Mount for Pill Speakers
+                    td.product-category Audio
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:40%')
+                    td
+                      .chip.chip-warning
+                        .chip-body
+                          .chip-text delivered
+                    td.product-price $49.99
+                  tr
+                    td
+                    td.product-name Bose&reg; - SoundLink&reg; Color Bluetooth Speaker
+                    td.product-category Fitness
+                    td
+                      .progress.progress-bar-primary
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:90%')
+                    td
+                      .chip.chip-primary
+                        .chip-body
+                          .chip-text pending
+                    td.product-price $129.99
+                  tr
+                    td
+                    td.product-name BRAVEN - Portable Bluetooth Speaker
+                    td.product-category Fitness
+                    td
+                      .progress.progress-bar-primary
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:87%')
+                    td
+                      .chip.chip-warning
+                        .chip-body
+                          .chip-text on hold
+                    td.product-price $199.99
+                  tr
+                    td
+                    td.product-name Craig - Portable Wireless Speaker
+                    td.product-category Computers
+                    td
+                      .progress.progress-bar-danger
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:20%')
+                    td
+                      .chip.chip-danger
+                        .chip-body
+                          .chip-text canceled
+                    td.product-price $199.99
+                  tr
+                    td
+                    td.product-name Definitive Technology - Wireless Speaker
+                    td.product-category Fitness
+                    td
+                      .progress.progress-bar-primary
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:75%')
+                    td
+                      .chip.chip-primary
+                        .chip-body
+                          .chip-text pending
+                    td.product-price $399.99
+                  tr
+                    td
+                    td.product-name Fitbit - Charge HR Activity Tracker + Heart Rate (Large)
+                    td.product-category Audio
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:60%')
+                    td
+                      .chip.chip-primary
+                        .chip-body
+                          .chip-text pending
+                    td.product-price $149.99
+                  tr
+                    td
+                    td.product-name Fitbit - Flex 1&quot; USB Charging Cable
+                    td.product-category Fitness
+                    td
+                      .progress.progress-bar-primary
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:87%')
+                    td
+                      .chip.chip-warning
+                        .chip-body
+                          .chip-text on hold
+                    td.product-price $14.99
+                  tr
+                    td
+                    td.product-name Fitbit - Activity Tracker
+                    td.product-category Fitness
+                    td
+                      .progress.progress-bar-danger
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:35%')
+                    td
+                      .chip.chip-danger
+                        .chip-body
+                          .chip-text canceled
+                    td.product-price $99.99
+                  tr
+                    td
+                    td.product-name Fitbit - Charge Wireless Activity Tracker (Large)
+                    td.product-category Computers
+                    td
+                      .progress.progress-bar-primary
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:87%')
+                    td
+                      .chip.chip-primary
+                        .chip-body
+                          .chip-text pending
+                    td.product-price $129.99
+                  tr
+                    td
+                    td.product-name Craig - Tower Speaker
+                    td.product-category Audio
+                    td
+                      .progress.progress-bar-warning
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:68%')
+                    td
+                      .chip.chip-warning
+                        .chip-body
+                          .chip-text on hold
+                    td.product-price $69.99
+                  tr
+                    td
+                    td.product-name BRAVEN - Outdoor Speaker
+                    td.product-category Computers
+                    td
+                      .progress.progress-bar-primary
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:97%')
+                    td
+                      .chip.chip-success
+                        .chip-body
+                          .chip-text delivered
+                    td.product-price $199.99
+                  tr
+                    td
+                    td.product-name Bose&reg; - Bluetooth Speaker Travel Bag
+                    td.product-category Computers
+                    td
+                      .progress.progress-bar-primary
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:89%')
+                    td
+                      .chip.chip-warning
+                        .chip-body
+                          .chip-text on hold
+                    td.product-price $44.99
+                  tr
+                    td
+                    td.product-name Altec Lansing - Mini H2O Bluetooth Speaker
+                    td.product-category Fitness
+                    td
+                      .progress.progress-bar-success
+                        .progress-bar(role='progressbar' aria-valuenow='40' aria-valuemin='40' aria-valuemax='100' style='width:87%')
+                    td
+                      .chip.chip-success
+                        .chip-body
+                          .chip-text delivered
+                    td.product-price $199.99
+          // DataTable ends
+          include add_new_sidebar
+     
+        // Data list view end
+        include publicidad_baner_vertical
+// END: Content

@@ -1,0 +1,87 @@
+//@import "../_css/mapaBase.css";
+  
+#mapa
+    width: 100%;
+    height: 550px;
+    z-index: 0;
+    position: relative;
+    margin-top: 0 !important;
+#mapa:after {
+        -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+        text-shadow: none;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'fontawesome';
+        speak: none;
+        font-weight: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-transform: none;
+        color: #2a2a2a;
+        font-size: 18px;
+        position: absolute;
+        bottom: 128px;
+        background-color: #fff;
+        content: "\f07d";
+        padding: 8px 10px;
+        right: 10px;
+        z-index: 1;
+    }
+    
+// .cluster
+//     & > div
+//         color #fff !important
+//         text-align center !important
+//         z-index 3
+//         &:before
+//             -moz-border-radius 50%
+//             -webkit-border-radius 50%
+//             border-radius 50%
+//             background-color #1396e2
+//             content ""
+//             height 31px
+//             position absolute
+//             top 0
+//             bottom 0
+//             right 0
+//             left 0
+//             margin auto
+//             width 31px
+//             z-index -1
+.iconMarker
+    font-size 2em
+    
+.marker-style
+    border 3px solid #1396e2
+    img
+        position absolute !important
+        top -1px !important
+        bottom 0px !important
+        right 0px
+        left 0px
+        margin auto !important
+
+.marker-style-red
+    border 3px solid red
+
+.marker-style-green
+    border 3px solid green
+
+.marker-style-orange
+    border 3px solid orange
+
+.marker-style, .marker-style-red, .marker-style-green,
+    text-align center
+    width 34px
+    height 34px
+    border-radius 50%
+    margin-left -17px !important
+    margin-top -46px !important
+    border-radius 50%
+.marker-style, .marker-style-red, .marker-style-green:hover {
+    top: -5px;
+}
+.iconMarker
+    font-size 2em
+

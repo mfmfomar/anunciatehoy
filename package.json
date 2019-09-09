@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Api Rest para la web ubicaciones",
+  "main": "index.js",
+  "scripts": {
+    "test": "supervisor server/index.js",
+    "start": "supervisor server/index.js",
+    "run": "node server/index.js ",
+    "compilar": ""
+  },
+  "author": "Omar alejandro santoyo cota",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "connect-multiparty": "^2.1.0",
+    "crypto": "^1.0.1",
+    "express": "^4.16.3",
+    "express-minify-html": "^0.12.0",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.21.0",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.8",
+    "npm": "^5.10.0",
+    "pug": "^2.0.3",
+    "rimraf": "^2.6.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
+  }
+}

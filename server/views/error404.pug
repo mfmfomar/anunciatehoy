@@ -1,0 +1,66 @@
+doctype html
+// BEGIN: Head
+head
+  meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+  meta(name='description' content='Vuesax admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities.')
+  meta(name='keywords' content='admin template, Vuesax admin template, dashboard template, flat admin template, responsive admin template, web app')
+  meta(name='author' content='PIXINVENT')
+  title Error 404
+  link(rel='apple-touch-icon' href='../../../app-assets/images/ico/apple-icon-120.html')
+  link(rel='shortcut icon' type='image/x-icon' href='/publico/apxp-assets/images/ico/favicon.ico')
+ 
+  // BEGIN: Vendor CSS
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/vendors/css/vendors.min.css')
+  // END: Vendor CSS
+  // BEGIN: Theme CSS
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/bootstrap.css')
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/bootstrap-extended.css')
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/colors.css')
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/components.css')
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/themes/dark-layout.css')
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/themes/semi-dark-layout.css')
+  // BEGIN: Page CSS
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/core/menu/menu-types/vertical-menu.css')
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/core/colors/palette-gradient.css')
+  link(rel='stylesheet' type='text/css' href='/publico/app-assets/css/pages/error.css')
+  // END: Page CSS
+  // BEGIN: Custom CSS
+  link(rel='stylesheet' type='text/css' href='/publico/assets/css/style.css')
+  // END: Custom CSS
+// END: Head
+// BEGIN: Body
+// BEGIN: Content
+.app-content.content
+  .content-wrapper
+    .content-header.row
+    .content-body
+      // error 404
+      section.row.flexbox-container
+        .col-xl-7.col-md-8.col-12.d-flex.justify-content-center
+          .card.auth-card.bg-transparent.shadow-none.rounded-0.mb-0.w-100
+            .card-content
+              .card-body.text-center
+                img.img-fluid.align-self-center(src='/publico/app-assets/images/pages/404.png' alt='Anunciate Hoy')
+                h1.font-large-2.my-1(data-i18n='404') 404 - Página no encontrada!
+                p.p-2(data-i18n='404msj') 
+                  | Es extraño que estes viendo esta pagina,
+                  | deja de intentar lo que estabas haciendo y dirigite a nuestra pagina principal.
+
+                a.btn.btn-primary.btn-lg.mt-2(href='/' data-i18n='404btn') Ir a la página principal
+      // error 404 end
+// END: Content
+// BEGIN: Vendor JS
+script(src='/publico/app-assets/vendors/js/vendors.min.js')
+// BEGIN Vendor JS
+// BEGIN: Page Vendor JS
+// END: Page Vendor JS
+// BEGIN: Theme JS
+script(src='/publico/app-assets/js/core/app-menu.js')
+script(src='/publico/app-assets/js/core/app.js')
+script(src='/publico/app-assets/js/scripts/components.js')
+// END: Theme JS
+// BEGIN: Page JS
+// END: Page JS
+// END: Body

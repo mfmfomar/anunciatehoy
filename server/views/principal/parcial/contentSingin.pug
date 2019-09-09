@@ -1,0 +1,60 @@
+// BEGIN: Content
+.app-content.content
+  include header
+  .content-wrapper
+    .content-header.row
+    .content-body
+      include modalAlert
+      section.row.flexbox-container
+        .col-xl-8.col-10.d-flex.justify-content-center
+          .card.bg-authentication.rounded-0.mb-0
+            .row.m-0
+                .card.rounded-0.mb-0.p-2
+                  .card-header.pt-50.pb-1
+                    .card-title
+                      h4.mb-0(data-i18n='Crear cuenta') Crear Cuenta
+                  p.px-2(data-i18n='Crear cuenta texto') Rellene el siguiente formulario para crear una nueva cuenta.
+                  .card-content
+                    .card-body.pt-0
+                      form#form-create-account(action='#')
+                        .form-label-group.form-group
+                          .controls
+                            label(for='inputName' data-i18n='Nombre' data-validation-required-message="The password field is required" minlength="2" aria-invalid="true") Nombre(s):
+                            input#inputName.form-control(type='text' placeholder='Nombre' required='' v-model="user.nombre" data-validation-regex-regex="^[-a-zA-Z-][-a-zA-Z- ]+$" data-validation-regex-message="Debe ingresar un nombre valido" minlength_es="2")
+                            .form-control-position20
+                              i.feather.icon-user
+                        .form-label-group.form-group
+                          .controls
+                            label(for='inputApellido' data-i18n='Apellido') Apellido:
+                            input#inputApellido.form-control(type='text' placeholder='Apellido' required='' v-model="user.apellido" data-validation-regex-regex="^[-a-zA-Z-][-a-zA-Z- ]+$" data-validation-regex-message="Debe ingresar un apellido valido")
+                        .form-label-group.form-group
+                          .controls
+                            label(for='inputTelefono' data-i18n='Telefono') Teléfono:
+                            input#inputTelefono.form-control(type='text' placeholder='Teléfono' required='' v-model="user.telefono" data-validation-containsnumber-regex="^([0-9]+)$" data-validation-containsnumber-message="El campo numérico solo puede contener caracteres numéricos." minlength_es="5")
+                            .form-control-position20
+                              i.feather.icon-smartphone
+                        .form-label-group.form-group
+                          .controls
+                            label(for='inputEmail' data-i18n='Correo' ) Correo
+                            input#inputEmail.form-control(type='email' placeholder='Email' required='' v-model="user.email")
+                            .form-control-position20
+                              i.feather.icon-mail
+                        .form-label-group.form-group
+                          .controls
+                            label(for='inputPassword' data-i18n='Contraseña') Contraseña
+                            input#inputPassword.form-control(type="password" name="password" placeholder='Contraseña' required='' v-model="user.password")
+                            .form-control-position20
+                              i.feather.icon-lock
+                        .form-group.row
+                          .col-12
+                            fieldset.checkbox
+                              .vs-checkbox-con.vs-checkbox-primary
+                                input(type='checkbox' required )
+                                span.vs-checkbox
+                                  span.vs-checkbox--check
+                                    i.vs-icon.feather.icon-check
+                                span(data-i18n='terminosycondiciones') Acepto los Terminos &amp; Condiciones.
+                        a.btn.btn-outline-primary.float-left.btn-inline.mb-50(href='/login' data-i18n='Iniciar Sesion') Iniciar Sesion
+                        button#enviar.btn.btn-primary.float-right.btn-inline.mb-50(type='submit' data-i18n='Registrarse')
+                          | Registrarse
+// END: Content

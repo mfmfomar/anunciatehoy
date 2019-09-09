@@ -1,0 +1,94 @@
+// Modal Cuenta creada
+#myModalAlert_cuenta.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        //button.close(type='button' data-dismiss='modal') &times;
+        h4.modal-title(data-i18n='Mensaje') Mensaje
+      //.modal-body Datos Actualizados => "{{ubicacion.nombre}}"
+      .modal-body(data-i18n='Cuenta creada') Se ha enviado un correo de confirmación a la dirección que proporcionaste  para continuar con el proceso.
+      .modal-footer
+        button#modalSuccess.btn.btn-success(type='button' data-dismiss='modal' onclick="" data-i18n='Aceptar') Aceptar
+// Modal Cuenta error
+#myModalAlert_err.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        //button.close(type='button' data-dismiss='modal') &times;
+        h4.modal-title(data-i18n='Mensaje') Mensaje
+      .modal-body "{{this.message}}"
+      //.modal-body(data-i18n='Cuenta creada') Cuenta creada
+      .modal-footer
+        button#modalSuccess.btn.btn-success(type='button' data-dismiss='modal' onclick="" data-i18n='Aceptar') Aceptar
+// Modal Cuenta Correo existente
+#myModalAlert_errMensaje.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        //button.close(type='button' data-dismiss='modal') &times;
+        h4.modal-title(data-i18n='Mensaje') Mensaje
+      .modal-body(data-i18n='Mensaje correo') Ya existe un usuario registrado con el mismo correo electronico.
+      .modal-footer
+        button#modalSuccess.btn.btn-success(type='button' data-dismiss='modal' onclick="" data-i18n='Aceptar') Aceptar
+// Modal login error, no existe usuario
+#myModalLogin_errUsuario.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        //button.close(type='button' data-dismiss='modal') &times;
+        h4.modal-title(data-i18n='Mensaje') Mensaje
+      .modal-body(data-i18n='MensajeErroLogin') No existe el usuario.
+      .modal-footer
+        button#modalSuccess.btn.btn-success(type='button' data-dismiss='modal' onclick="" data-i18n='Aceptar') Aceptar
+// Modal login error, contraseña incorrecta
+#myModalLogin_errUsuariopassword.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        //button.close(type='button' data-dismiss='modal') &times;
+        h4.modal-title(data-i18n='Mensaje') Mensaje
+      .modal-body(data-i18n='MensajeErroLogincorreo') Contraseña incorrecta.
+      //.modal-body(data-i18n='Cuenta creada') Cuenta creada
+      .modal-footer
+        button#modalSuccess.btn.btn-success(type='button' data-dismiss='modal' onclick="" data-i18n='Aceptar') Aceptar
+// Modal login error, cuenta no esta activada
+#myModalLogin_errUsuarioactivado.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        //button.close(type='button' data-dismiss='modal') &times;
+        h4.modal-title(data-i18n='Mensaje') Mensaje
+      .modal-body(data-i18n='CuentaDescativada') La Cuenta no esta activada.
+      //.modal-body(data-i18n='Cuenta creada') Cuenta creada
+      .modal-footer
+        button#modalSuccess.btn.btn-success(type='button' data-dismiss='modal' onclick="" data-i18n='Aceptar') Aceptar
+// Modal anuncio publicado
+#myModalanuncio_publicado.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        //button.close(type='button' data-dismiss='modal') &times;
+        h4.modal-title(data-i18n='Mensaje') Mensaje
+      .modal-body(data-i18n='Anuncio publicado') Anuncio publicado.
+      //.modal-body(data-i18n='Cuenta creada') Cuenta creada
+      .modal-footer
+        button#modalSuccess.btn.btn-success(type='button' data-dismiss='modal' onclick='location.href="/usuario/anuncios";' data-i18n='Aceptar') Aceptar
+// Modal anuncio publicado
+#myModalUbicacion_publicada.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        //button.close(type='button' data-dismiss='modal') &times;
+        h4.modal-title(data-i18n='Mensaje') Mensaje
+      .modal-body(data-i18n='Ubicacion publicado') Ubicación publicada.
+      //.modal-body(data-i18n='Cuenta creada') Cuenta creada
+      .modal-footer
+        button#modalSuccess.btn.btn-success(type='button' data-dismiss='modal' onclick='location.href="/usuario/ubicaciones";' data-i18n='Aceptar') Aceptar

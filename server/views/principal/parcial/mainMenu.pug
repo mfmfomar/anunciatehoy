@@ -1,0 +1,114 @@
+// BEGIN: Main Menu
+#sideMenu.main-menu.menu-fixed.menu-light.menu-accordion.menu-shadow(data-scroll-to-active='true')
+  .navbar-header
+    ul.nav.navbar-nav.flex-row
+      li.nav-item.mr-auto
+        a.navbar-brand
+          .brand-logo
+          .brand-text.mb-0
+      li.nav-item.nav-toggle
+        a.nav-link.modern-nav-toggle.pr-0(data-toggle='collapse')
+          i.feather.icon-x.d-block.d-xl-none.font-medium-4.primary.toggle-icon
+          i.toggle-icon.feather.icon-disc.font-medium-4.d-none.d-xl-block.collapse-toggle-icon.primary(data-ticon='icon-disc')
+  .shadow-bottom
+  .main-menu-content
+    ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+      li.nav-item(v-if="!login")
+        a(href='#')
+          i.feather.icon-user
+          span.menu-title(data-i18n='Usuario') Usuario
+        ul.menu-content
+          li#login
+            a(href='/login')
+              i.feather.icon-list
+              span.menu-item(data-i18n='Iniciar Sesion' ) Iniciar Sesión
+          li#registrarse
+            a(href='/signIn')
+              i.feather.icon-edit
+              span.menu-item(data-i18n='Registrarse') Registrarse
+      li.nav-item(v-else)
+        a(href='#')
+          i.feather.icon-user
+          span.menu-title(data-i18n='Usuario') Usuario
+        ul.menu-content
+          li#perfil
+            a(href='/usuario/perfil')
+              i.feather.icon-edit
+              span.menu-item(data-i18n='Perfil') Mi Perfil
+          //li#anuncios
+            a(href='/usuario/anuncios')
+              i.feather.icon-list
+              span.menu-item(data-i18n='mis Anuncios') Mis Anuncios
+          li#misUbicaciones
+            a(href='/usuario/ubicaciones')
+              i.feather.icon-list
+              span.menu-item(data-i18n='mis Ubicaciones') Mis Ubicaciones
+          //li#Favoritos
+            a(href='/usuario/favoritos')
+              i.feather.icon-heart
+              span.menu-item(data-i18n='Favoritos') Mis Favoritos
+      li.navigation-header
+        span Anunciate Hoy
+      //li.nav-item
+        a(href='#')
+          i.feather.icon-home
+          span.menu-title(data-i18n='Anuncios') Anuncios
+          span.badge.badge.badge-warning.badge-pill.float-right.mr-2 2
+        ul.menu-content
+          li#index
+            a(href='/')
+              i.feather.icon-list
+              span.menu-item(data-i18n='Inicio') Inicio
+          li#publicar
+            a(href='/publicar')
+              i.feather.icon-edit
+              span.menu-item(data-i18n='Publicar') Publicar
+          li
+            a(href='dashboard-ecommerce.html')
+              i.feather.icon-search
+              span.menu-item(data-i18n='Buscar') Buscar
+      li.nav-item
+        a(href='')
+          i.feather.icon-map
+          span.menu-title(data-i18n='Ubicaciones') Ubicaciones
+        ul.menu-content
+          li#ubicaciones
+            a(href='/ubicaciones')
+              i.feather.icon-list
+              span.menu-item(data-i18n='Inicio') Inicio
+          li#nuevaUbicacion
+            a(href='/nuevaUbicacion')
+              i.feather.icon-edit
+              span.menu-item(data-i18n='nueva ubicacion') Nueva Ubicación
+          //li
+            a(href='dashboard-ecommerce.html')
+              i.feather.icon-search
+              span.menu-item(data-i18n='Buscar') Buscar
+      //li.navigation-header
+        span(data-i18n='Configuraciones') Configuraciones
+      //li.nav-item
+        a(href='#')
+          i.feather.icon-settings
+          span.menu-title(data-i18n='Card') Card
+        ul.menu-content
+          li
+            a(href='card-basic.html')
+              i.feather.icon-circle
+              span.menu-item(data-i18n='Basic') Basic
+          li
+            a(href='card-advance.html')
+              i.feather.icon-circle
+              span.menu-item(data-i18n='Advance') Advance
+          li
+            a(href='card-statistics.html')
+              i.feather.icon-circle
+              span.menu-item(data-i18n='Statistics') Statistics
+          li
+            a(href='card-analytics.html')
+              i.feather.icon-circle
+              span.menu-item(data-i18n='Analytics') Analytics
+          li
+            a(href='card-actions.html')
+              i.feather.icon-circle
+              span.menu-item(data-i18n='Usuario') Card Actions
+// END: Main Menu

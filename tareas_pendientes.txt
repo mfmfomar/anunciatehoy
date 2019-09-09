@@ -1,0 +1,23 @@
+seccion principal
+	-problma en el filtrado en deseleccionar algo ya no carga todos
+	-problema al cargar la imagen de portada, al crear uno pin nuevo
+
+
+
+
+
+seccion: Usuario
+usuario/imagenes
+	falta hacer una validacion efectiva para no subir al final archivos de mas
+
+	*verificar si la propiedad que se esta consultando es del propietario
+
+seccion plugins:
+	solucionar el problema con el texto y aplicar transparencia en...
+	C:\Users\admin\Documents\workSpace\web\propiedades\server\public\plugins\dropzone\images
+
+
+seccion de paginas nuevas:
+tomar un meno de ahi
+https://tympanus.net/codrops/2011/10/24/creative-css3-animation-menus/
+

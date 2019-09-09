@@ -1,0 +1,47 @@
+https://www.youtube.com/watch?v=8eg4w8v076w
+
+
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3", Hashing Passwords
+    "body-parser": "^1.18.2", tratar los datos que recibamos
+    "crypto": "^1.0.1", encriptar...
+    "express": "^4.16.2",
+    "jwt-simple": "^0.5.1", java web token
+    "moment": "^2.21.0", manejo de fechas
+    "mongoose": "^5.0.9", driver oficial de Mongo
+    "npm": "^5.7.1",
+    "rimraf": "^2.6.2", borrar archivos
+    "socket.io": "^2.0.4",
+    "nodemailer": "^4.6.3", correo electronico
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
+  }
+
+
+//npm 
+  morgan 
+// correo electrono
+  http://deivijt.com/blog/como-enviar-emails-con-nodejs-y-nodemailer/
+
+css
+  https://www.youtube.com/watch?v=D4sAjpQ5Aeo&t=0s&index=19&list=WL
+
+Vue.js
+  https://www.youtube.com/watch?v=_RKC6a8-Ic0&list=PLhCiuvlix-rRfn75tEQHzsYaijqSpW_vt&index=2
+
+jade pug
+  http://www.webartea.com.ve/2016/04/usando-jade-reutilizando-codigo-con.html
+
+  https://stackoverflow.com/questions/38044237/node-js-pass-a-variable-to-jade-pug
+
+listas css
+
+https://blog.endeos.com/lleva-las-listas-html-al-siguiente-nivel-con-css/
+
+
+relaciones con mongodb
+  https://carlosazaustre.es/como-relacionar-tus-modelos-en-mongodb/
+
+galeria de imagenes del ususario
+  https://bootsnipp.com/snippets/QoZeX

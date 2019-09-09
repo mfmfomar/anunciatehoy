@@ -1,0 +1,99 @@
+<div class="app-content content col-md-10 col-sm-12"> 
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-left mb-0">{nombre}</h2>
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#" onclick="regresar();" data-i18n='Inicio'>Inicio</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#">{tipo}</a>
+                                </li>
+                                <li class="breadcrumb-item active" data-i18n='Detalles'>Detalles
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Feather icon-s section start -->
+            <section id="feather-icons">
+                <div class="row">
+                    <div class="col-md-10 col-sm-12">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div id="page-content">
+                                        <!-- end Breadcrumb -->
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- Property Detail Content -->
+                                                <div class="col-md-12 col-sm-12">
+                                                    <section id="property-detail">
+                                                        <section id="property-gallery" style="margin-top: 25px;">
+                                                            <div class="owl-carousel property-carousel col-md-12 col-sm-12">
+                                                               {carrusel}
+                                                            </div>
+                                                        </section>
+                                                        <header class="property-title">
+                                                            <div>
+                                                                <figure>{colonia}, {calle} #{numero}</figure><span class="tag price"><span data-i18n='Costo' >Costo</span>: ${costo}</span>
+                                                            </div>
+                                                           
+                                                        </header>
+                                                        <div class="row">
+                                                            <div class="col-md-8 col-sm-12">
+                                                                <section id="description">
+                                                                    <header><h2 data-i18n='Descripción del lugar'>Descripción del lugar</h2></header>
+                                                                     <p>{descripcion}</p>
+                                                                </section><!-- /#description -->
+                                                                <section id="property-usuer">
+                                                                    <header><h2>Datos del Propietario</h2></header>
+                                                                    <div class="agent" style="padding-left: 0;">
+                                                                        <div class="wrapper">
+                                                                            <header><h2>{nombreUsusario}</h2></header>
+                                                                            <dl>
+                                                                                <dt>Telefono:</dt>
+                                                                                <dd>{telefono}</dd>
+                                                                                <dt>Correo Electronico:</dt>
+                                                                                <dd><a href="mailto:#" style="color:#1396e2;">{correo}</a></dd>
+                                                                            </dl>
+                                                                        </div>
+                                                                    </div><!-- /.agent -->
+                                                                </section>
+                                                                <!-- /#property-usuer -->
+                                                            </div><!-- /.col-md-8 -->
+                                                        </div><!-- /.row -->
+                                                    </section><!-- /#property-detail -->
+                                                </div><!-- /.col-md-9 -->
+                                                <!-- end Property Detail Content -->
+                                                <!-- sidebar -->
+                                                <div class="col-md-3 col-sm-3">
+                                                    <section id="sidebar"></section>
+                                                </div>
+                                                <!-- end Sidebar -->
+                                            </div><!-- /.row -->
+                                        </div><!-- /.container -->
+                                    </div><div style="margin-bottom: 5%;"></div>
+                                <section id="footer-copyright">
+                                    <div class="container">
+                                        <span class="pull-left tag price" onclick="regresar();" data-i18n='Regresar al Mapa'>Regresar al Mapa</span>
+                                        <br>
+                                        <span class="pull-right"><a href="#page-top" class="roll" data-i18n='Ir Arriba'>Ir Arriba</a></span>
+                                        <br>
+                                    </div>
+                                </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Feather icon-s section end -->
+        </div>
+    </div>
+</div>

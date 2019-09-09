@@ -1,0 +1,26 @@
+#ubicacionesMapa.modal.fade(role='dialog')
+      .modal-dialog
+        // Modal content
+        .modal-content
+          .modal-header
+            //button.close(type='button' data-dismiss='modal') &times;
+            h4.modal-title(data-i18n="Glosario") Glosario
+          .modal-body
+            table.table.table-hover
+              thead
+                tr
+                  th(scope='col' data-i18n="Visible") Visible
+                  th(scope='col' data-i18n="Imagen") Imagen
+                  th(scope='col' data-i18n="Descripcion") Descripcion
+              tbody
+                tr(v-for='(item,index) in filtroUbicaciones')
+                  td 
+                    .custom-control.custom-switch.custom-switch-success.mr-2.mb-1
+                      input.custom-control-input(:keyup='guardar(item[2])' type='checkbox' v-model:checked="item[2]"  v-bind:id="'ubicacion_'+index")
+                      label.custom-control-label(v-bind:for="'ubicacion_'+index")
+
+                  th(scope='row')
+                    img(v-bind:src="'publico/assets/img/property-types/'+item[1]")
+                  td(:data-i18n="item[3]") {{ item[0] }}
+          .modal-footer
+            button.btn.btn-default(type='button' data-dismiss='modal' data-i18n="Cerrar") Cerrar

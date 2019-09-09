@@ -1,0 +1,63 @@
+// add new sidebar starts
+.add-new-data-sidebar
+  .overlay-bg
+  .add-new-data
+    .div.mt-2.px-2.d-flex.new-data-title.justify-content-between
+      div
+        h4() AÑADIR NUEVO ANUNCIO
+      .hide-data-sidebar
+        i.feather.icon-x
+    .data-items.pb-3
+      .data-fields.px-2
+        form#add-new-data-sidebar.row
+          .col-sm-12.data-field-col
+            fieldset.form-label-group.form-group.position-relative.has-icon-left.input-divider-left
+              input.form-control(required name='titulo' type='text' placeholder='Título')
+              .form-control-position
+                i.feather.icon-file
+              label(data-i18n='Título') Título
+          .col-12.data-field-col(style="margin-top: .25rem;")
+            fieldset.form-label-group.mb-0
+              textarea#textarea-counter.form-control.char-textarea.active.max-limit(required data-length='1000' rows='3' placeholder='Descripción' style='color: rgb(234, 84, 85); ' name='descripcion')
+              label(for='textarea-counter' data-i18n='Descripción') Descripción
+            small.counter-value.float-right(style='background-color: rgb(115, 103, 240);')
+              span.char-count 0
+              |  / 1000
+          .col-sm-6.data-field-col(style="margin-top: 0;")
+            .form-group
+              label(for='textarea-counter' data-i18n='Categoria') Categoria
+              select#select2-icons.select2-icons.form-control(name="categoria"  v-model="selectedOption" required @change="")
+                option(value='Automoviles' data-icon='fa fa-car' selected='' data-i18n='Automoviles' ) Automóviles
+                option(value='Bicicletas' data-icon='fa fa-bicycle' data-i18n='Bicicletas' ) Bicicletas
+                option(value='Bebes' data-icon='fa fa-baby' data-i18n='Bebes' ) Bebes
+                option(value='Celulares' data-icon='fa fa-mobile' data-i18n='Celulares' ) Celulares
+                option(value='Computadoras' data-icon='fa fa-laptop' data-i18n='Computadoras' ) Computadoras
+                option(value='Deportes' data-icon='fa fa-running' data-i18n='Deportes' ) Deportes
+                option(value='Electrónicos' data-icon='fa fa-plug' data-i18n='Electrónicos' ) Electrónicos
+                option(value='Casa y jardin' data-icon='fa fa-home' data-i18n='Casa y jardin' ) Casa y jardin
+                option(value='Herramientas' data-icon='fa fa-tools' data-i18n='Herramientas' ) Herramientas
+                option(value='Motocicletas' data-icon='fa fa-motorcycle' data-i18n='Motocicletas' ) Motocicletas
+                option(value='Oficina' data-icon='fa fa-building' data-i18n='Oficina' ) Oficina
+                option(value='Ropa y calzado' data-icon='fa fa-tshirt' data-i18n='Ropa y calzado' ) Ropa y calzado
+                option(value='Servicios Generales' data-icon='fa fa-user-tie' data-i18n='Servicios Generales' ) Servicios Generales
+                option(value='Videojuegos' data-icon='fa fa-gamepad' data-i18n='Videojuegos' ) Video juegos
+                option(value='Varios' data-icon='fa fa-bookmark' data-i18n='Varios' ) Varios
+          .col-sm-6.data-field-col(style="margin-top: 0;")
+            fieldset
+              label(data-i18n='Precio') Precio
+              .input-group
+                .input-group-prepend
+                  span.input-group-text $
+                input.form-control(required name='precio' type='number' placeholder='Precio')
+                .input-group-append
+                  span.input-group-text .00
+          .col-sm-12.data-field-col.data-list-upload(style="margin-top: 1.25rem;")
+            #portadaForm.dropzone.dropzone-area(action="../api/nuevoAnuncio" style="overflow: hidden;height: 200px;padding: 0;")
+              .dropzone-previews.dz-message(data-i18n='Subir imagen') Subir imagen
+          button#enviar.btn.btn-primary(type="submit" data-i18n='Añadir nuevo' style='display: none;')
+    .add-data-footer.d-flex.justify-content-around.px-3.mt-2
+      .add-data-btn(style="margin-right: 10px;")
+        button#nuevo.btn.btn-primary(type="submit" data-i18n='Publicar') Publicar
+      .cancel-data-btn
+        button.btn.btn-outline-danger(data-i18n='Cancelar') Cancelar
+// add new sidebar ends

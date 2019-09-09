@@ -1,0 +1,32 @@
+#myModal2.modal.fade(role='dialog')
+  .modal-dialog
+    // Modal content
+    .modal-content
+      .modal-header
+        h4.modal-title(data-i18n='Anuncio') Anuncio
+        button.btn.btn-icon.btn-flat-primary.mr-1.mb-1.waves-effect(type='button' data-dismiss='modal')
+          i.feather.icon-x
+      .modal-body
+        .col-xl-12.col-md-12.col-sm-12.carta-box
+          .card.carta.col-xl-12.col-md-12.col-sm-12(style="padding: 0 !important;")
+            .card-content.cara.col-xl-12.col-md-12.col-sm-12(style="padding: 0 !important;position :relative")
+              img.card-img-top.img-fluid(v-bind:src="anuncio.imagen" alt='Card image cap')
+              .card-body
+                h5.card-title.palabraLarga(style="max-width: 380px;") {{ anuncio.titulo }} 
+                p.card-text.mb-0 {{ user.nombre }} {{ user.apellido }}
+                span.card-text
+                  a.card-link {{ user.nombreUsuario }} 
+                hr.my-1
+                .d-flex.justify-content-between.mt-2
+                  .float-left
+                    p.font-medium-2.mb-0 ${{ anuncio.precio }} 
+                  .float-right
+                    p.font-medium-2.mb-0 {{ anuncio.fecha }}
+            .card-content.cara.detras.col-xl-12.col-md-12.col-sm-12
+              .card-body
+                h4.card-title.palabraLarga(style="max-width: 380px;") {{ anuncio.titulo }} 
+                p.card-text.break-word {{ anuncio.descripcion }}
+                ul.list-group.list-group-flush
+                  li.list-group-item
+                    span.badge.badge-pill.bg-info.float-right
+                    a.card-link(href='#') Ver Anuncio completo...

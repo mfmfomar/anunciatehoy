@@ -1,0 +1,114 @@
+// Form wizard with step validation section start
+section#validation
+  .row
+    .col-md-8.col-sm-12
+      .card
+        .card-header
+          h4.card-title(data-i18n='nueva ubicacion') Nueva Ubicación
+        .card-content.data-items
+          .card-body
+            include modalAlert
+            form#add-new-data-sidebar.steps-validation.wizard-circle
+              // Step 1
+              h6
+                i.step-icon.feather.icon-home
+                  h5(data-i18n='paso1') Paso 1
+              fieldset
+                br
+                br
+                .row
+                    h5.semi-bold(data-i18n='Datos Generales') Datos Generales 
+                    br
+                    br
+                    br
+                    .row.col-md-12.vv
+                      .col-md-12
+                        label( data-i18n='TipoUbicacion') Tipo de Ubicacion
+                        select.form-control(name="tipo" v-model="selectedOption" required='' @change="setDatos()")
+                          option( value="" disabled selected data-i18n='SeleccionaOPC') --- Selecciona una Opción  ---
+                          option(v-for="Ubicacion in TipoUbicacion" :value='Ubicacion.value' v-text="Ubicacion.name"  :data-i18n='Ubicacion.i18n') 
+                      br
+                      br
+                      br
+                      br
+                      .col-md-6(v-if="ubicacion.tipo=='hotel'||ubicacion.tipo=='motel'||ubicacion.tipo=='hostal'")
+                        label(data-i18n='Nombre') Nombre
+                        .form-group.has-icon-left.input-divider-left.position-relative
+                          input.form-control(required name='titulo' type='text' v-model="ubicacion.nombre")
+                          .form-control-position
+                            i.feather.icon-file
+                      .col-md-6
+                        label(data-i18n='Colonia-Fraccionamiento') Colonia / Fraccionamiento
+                        .form-group.has-icon-left.input-divider-left.position-relative
+                          input.form-control(required name='colonia' type='text' v-model="ubicacion.colonia")
+                          .form-control-position
+                            i.feather.icon-file
+                      .col-md-6
+                        label(data-i18n='Calle') Calle
+                        .form-group.has-icon-left.input-divider-left.position-relative
+                          input.form-control(required name='calle' type='text' v-model="ubicacion.calle")
+                          .form-control-position
+                            i.feather.icon-file
+                      .col-md-6
+                        label(data-i18n='numero') Número
+                        .form-group.has-icon-left.input-divider-left.position-relative
+                          input.form-control(required name='numero' type='text' v-model="ubicacion.numero")
+                          .form-control-position
+                            i.feather.icon-file
+                      .col-md-12
+                        fieldset.mb-0
+                          label(for='textarea-counter' data-i18n='Descripción') Descripción
+                          textarea#textarea-counter.form-control.char-textarea.active.max-limit(required data-length='1000' rows='3' placeholder='Descripción' style='color: rgb(234, 84, 85); ' name='descripcion' v-model="ubicacion.descripcion")
+                        small.counter-value.float-right(style='background-color: rgb(115, 103, 240);')
+                          span.char-count 0
+                          |  / 1000      
+                      .col-md-6
+                        fieldset
+                          label(data-i18n='Precio') Precio
+                          .form-group.has-icon-left.input-divider-left.position-relative
+                            input.form-control(required name='costo' type='number' v-model="ubicacion.costo")
+                            .form-control-position
+                              i.fas.fa-dollar-sign 
+              // Step 2
+              h6
+                i.step-icon.feather.icon-camera
+                  h5(data-i18n='paso2') Paso 2
+              fieldset
+                br
+                br
+                .row
+                  h4.semi-bold
+                  | Step 2 - 
+                  span.light Compartenos alguna imagen de &iquest;Como se ve?
+
+                  .col-md-12
+                    //#portadaForm.dropzone.dropzone-area(action="/api/nuevoAnuncio_photos" style="padding: 0;")
+                    #portadaForm.dropzone.dropzone-area(action="/api/nuevaUbicacion_photos" style="padding: 0;")
+                      .dropzone-previews.dz-message(data-i18n='Subir imagen') Subir imagen
+                    input#foto.form-control.no-boarder(required type='text' name='numeroDefotos' style='visibility:hidden;height: 0px;padding: 0px;')
+                    input#imgPortada(required type='text' name='imgPortada' style='visibility:hidden;height: 0px;padding: 0px;')
+                br
+              // Step 3
+              h6
+                i.step-icon.feather.icon-map
+                  h5(data-i18n='paso3') Paso 3
+              fieldset
+                br
+                br
+                .row
+                  h4.semi-bold
+                  | Step 3 - 
+                  span.light Compartenos alguna imagen de &iquest;Como se ve?
+
+                  .col-md-12.vv
+                    #map
+                    input#lat( type='hidden' v-model="ubicacion.ubicacion.lat")
+                    input#lng( type='hidden' v-model="ubicacion.ubicacion.lng")
+                    input#ubicacionData(name="ubicacion" type='hidden')
+                br
+    
+    
+
+    include publicidad_baner_vertical
+
+// Form wizard with step validation section end

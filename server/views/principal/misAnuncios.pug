@@ -1,0 +1,26 @@
+include parcial/head
+link(rel="stylesheet" type="text/css" href="../publico/app-assets/css/plugins/file-uploaders/dropzone.css")
+link(rel="stylesheet" type="text/css" href="../publico/app-assets/css/pages/data-list-view.css")
+link(rel="stylesheet" type="text/css" href="../publico/app-assets/vendors/css/forms/select/select2.min.css")
+link(rel="stylesheet" type="text/css" href="../publico/app-assets/vendors/css/file-uploaders/dropzone.min.css")
+
+// BEGIN: Body
+body.vertical-layout.vertical-menu-modern.2-columns.navbar-floating.footer-static(data-open="click" data-menu="vertical-menu-modern" data-col="2-columns")
+	
+    include parcial/mainMenu
+    include parcial/contentMisAnuncios
+    .sidenav-overlay
+    .drag-target
+    include parcial/footer
+    include parcial/js
+    //BEGIN: Page Vendor JS-->
+    script(src="../publico/app-assets/vendors/js/extensions/dropzone.min.js")
+    script(src="../publico/app-assets/vendors/js/tables/datatable/datatables.min.js")
+    script(src="../publico/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js")
+    script(src="../publico/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js")
+    script(src="../publico/app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js")
+    script(src="../publico/app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js")
+    //END: Page Vendor JS-->
+    script(src="../publico/app-assets/vendors/js/forms/select/select2.full.min.js")
+    script(src="../publico/assets/js/misAnuncios.min.js")
+
